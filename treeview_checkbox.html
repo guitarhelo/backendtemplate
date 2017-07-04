@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Tree View</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+
+
+
+
+
+
+    <div class="row">
+
+
+        <div class="col-sm-4">
+
+            <h2>Tree</h2>
+            <div id="treeview-checkable" class=""></div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap-treeview.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+
+
+        var json = '[' +
+                '{' +
+                '"text": "Parent 1",' +
+                '"nodes": [' +
+                '{' +
+                '"text": "Child 1",' +
+                '"nodes": [' +
+                '{' +
+                '"text": "Grandchild 1"' +
+                '},' +
+                '{' +
+                '"text": "Grandchild 2"' +
+                '}' +
+                ']' +
+                '},' +
+                '{' +
+                '"text": "Child 2"' +
+                '}' +
+                ']' +
+                '},' +
+                '{' +
+                '"text": "Parent 2"' +
+                '},' +
+                '{' +
+                '"text": "Parent 3"' +
+                '},' +
+                '{' +
+                '"text": "Parent 4"' +
+                '},' +
+                '{' +
+                '"text": "Parent 5"' +
+                '}' +
+                ']';
+
+
+
+
+
+        var $checkableTree = $('#treeview-checkable').treeview({
+            data: json,
+            showIcon: false,
+            showCheckbox: true,
+            onNodeChecked: function(event, node) {
+               // $('#checkable-output').prepend('<p>' + node.text + ' was checked</p>');
+                alert(node.text + ' was checked</p>');
+            },
+            onNodeUnchecked: function (event, node) {
+               // $('#checkable-output').prepend('<p>' + node.text + ' was unchecked</p>');
+                alert(node.text + ' was unchecked</p>');
+            }
+        });
+
+        var findCheckableNodess = function() {
+            return $checkableTree.treeview('search', [ $('#input-check-node').val(), { ignoreCase: false, exactMatch: false } ]);
+        };
+        var checkableNodes = findCheckableNodess();
+
+        // Check/uncheck/toggle nodes
+        $('#input-check-node').on('keyup', function (e) {
+            checkableNodes = findCheckableNodess();
+            $('.check-node').prop('disabled', !(checkableNodes.length >= 1));
+        });
+
+        $('#btn-check-node.check-node').on('click', function (e) {
+            $checkableTree.treeview('checkNode', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+        });
+
+        $('#btn-uncheck-node.check-node').on('click', function (e) {
+            $checkableTree.treeview('uncheckNode', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+        });
+
+        $('#btn-toggle-checked.check-node').on('click', function (e) {
+            $checkableTree.treeview('toggleNodeChecked', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+        });
+
+        // Check/uncheck all
+        $('#btn-check-all').on('click', function (e) {
+            $checkableTree.treeview('checkAll', { silent: $('#chk-check-silent').is(':checked') });
+        });
+
+        $('#btn-uncheck-all').on('click', function (e) {
+            $checkableTree.treeview('uncheckAll', { silent: $('#chk-check-silent').is(':checked') });
+        });
+
+
+    });
+</script>
+</body>
+</html>

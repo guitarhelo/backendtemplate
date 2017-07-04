@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+<!--<link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />-->
+
+
+<!--<script src="assets/js/jquery.min.js"></script>-->
+<!--<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>-->
+
+<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="example" cellpadding="1" cellspacing="1" id="users" class="display" width="100%">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>ZIP Code</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>ZIP Code</th>
+    </tr>
+    </tfoot>
+</table>
+<script type="text/javascript" class="init">
+
+
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "columns": [
+                {"data": "id"},
+                {"data": "name"},
+                {"data": "phone"},
+                {"data": "email"},
+                {"data": "country"},
+                {"data": "zip"}
+            ],
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                url: 'demo2.php',
+                type: 'POST'
+            }
+        });
+    } );
+
+
+</script>
+</body>
+
+
+</html>

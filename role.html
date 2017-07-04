@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Backend - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <style>
+            .modal .modal-dialog { width: 60%; }
+
+            table.dataTable tbody tr {
+                background-color: #ffffff;
+            }
+            table.dataTable tbody tr.selected {
+                background-color: #B0BED9;
+            }
+            table.dataTable tbody tr td{
+                background-color: #ffffff;
+            }
+            table.dataTable tbody tr td.selected {
+                background-color: #B0BED9;
+            }
+
+
+
+        </style>
+        <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+
+
+
+        <!-- Custom Files -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+        <!-- DataTables -->
+        <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+
+        <link href="assets/plugins/nestable/jquery.nestable.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+
+
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+        
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>Backend </span></a>
+                    </div>
+                </div>
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+                            <div class="pull-left">
+                                <button type="button" class="button-menu-mobile open-left">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+                            <form class="navbar-form pull-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search-bar" placeholder="Type here for search...">
+                                </div>
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </form>
+
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                <li class="dropdown hidden-xs">
+                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                        <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-lg">
+                                        <li class="text-center notifi-title">Notification</li>
+                                        <li class="list-group">
+                                           <!-- list item-->
+                                           <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="media-left">
+                                                    <em class="fa fa-user-plus fa-2x text-info"></em>
+                                                 </div>
+                                                 <div class="media-body clearfix">
+                                                    <div class="media-heading">New user registered</div>
+                                                    <p class="m-0">
+                                                       <small>You have 10 unread messages</small>
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </a>
+                                           <!-- list item-->
+                                            <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="media-left">
+                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
+                                                 </div>
+                                                 <div class="media-body clearfix">
+                                                    <div class="media-heading">New settings</div>
+                                                    <p class="m-0">
+                                                       <small>There are new settings available</small>
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                            </a>
+                                            <!-- list item-->
+                                            <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="media-left">
+                                                    <em class="fa fa-bell-o fa-2x text-danger"></em>
+                                                 </div>
+                                                 <div class="media-body clearfix">
+                                                    <div class="media-heading">Updates</div>
+                                                    <p class="m-0">
+                                                       <small>There are
+                                                          <span class="text-primary">2</span> new updates available</small>
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                            </a>
+                                           <!-- last list item -->
+                                            <a href="javascript:void(0);" class="list-group-item">
+                                              <small>See all notifications</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hidden-xs">
+                                    <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
+                                </li>
+                                <li class="hidden-xs">
+                                    <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <div class="user-details">
+                        <div class="pull-left">
+                            <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-muted m-0">Administrator</p>
+                        </div>
+                    </div>
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="mail-inbox.html">Inbox</a></li>
+                                    <li><a href="mail-compose.html">Compose Mail</a></li>
+                                    <li><a href="mail-read.html">View Mail</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="calendar.html" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Account </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="account.html">Account Management</a></li>
+                                    <li><a href="role.html">Role Management</a></li>
+                                    <li><a href="resource.html">Resource Management</a></li>
+                                    <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
+                                    <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
+                                    <li><a href="ui-modals.html">Modals</a></li>
+                                    <li><a href="ui-bootstrap.html">BS Elements</a></li>
+                                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
+                                    <li><a href="ui-notification.html">Notification</a></li>
+                                    <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Components </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="components-grid.html">Grid</a></li>
+                                    <li><a href="components-portlets.html">Portlets</a></li>
+                                    <li><a href="components-widgets.html">Widgets</a></li>
+                                    <li><a href="components-nestable-list.html">Nesteble</a></li>
+                                    <li><a href="components-rangeslider.html">Sliders </a></li>
+                                    <li><a href="components-gallery.html">Gallery </a></li>
+                                    <li><a href="components-pricing.html">Pricing Table </a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-redeem"></i> <span> Icons </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="icons-material.html">Material Design</a></li>
+                                    <li><a href="icons-ion.html">Ion Icons</a></li>
+                                    <li><a href="icons-fontawesome.html">Font awesome</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-now-widgets"></i><span> Forms </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="form-elements.html">General Elements</a></li>
+                                    <li><a href="form-validation.html">Form Validation</a></li>
+                                    <li><a href="form-advanced.html">Advanced Form</a></li>
+                                    <li><a href="form-wizard.html">Form Wizard</a></li>
+                                    <li><a href="form-wysiwyg.html">WYSIWYG Editor</a></li>
+                                    <li><a href="form-codeeditor.html">Code Editors</a></li>
+                                    <li><a href="form-uploads.html">Multiple File Upload</a></li>
+                                    <li><a href="form-xeditable.html">X-editable</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-view-list"></i><span> Tables </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                    <li><a href="tables-responsive.html">Responsive Table</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Charts </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="charts-morris.html">Morris Chart</a></li>
+                                    <li><a href="charts-chartjs.html">Chartjs</a></li>
+                                    <li><a href="charts-flot.html">Flot Chart</a></li>
+                                    <li><a href="charts-peity.html">Peity Charts</a></li>
+                                    <li><a href="charts-sparkline.html">Sparkline Charts</a></li>
+                                    <li><a href="charts-radial.html">Radial charts</a></li>
+                                    <li><a href="charts-other.html">Other Chart</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-place"></i><span> Maps </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="maps-google.html"> Google Map</a></li>
+                                    <li><a href="maps-vector.html"> Vector Map</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-pages"></i><span> Pages </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="pages-profile.html">Profile</a></li>
+                                    <li><a href="pages-timeline.html">Timeline</a></li>
+                                    <li><a href="pages-invoice.html">Invoice</a></li>
+                                    <li><a href="pages-email-template.html">Email template</a></li>
+                                    <li><a href="pages-contact.html">Contact-list</a></li>
+                                    <li><a href="pages-login.html">Login</a></li>
+                                    <li><a href="pages-register.html">Register</a></li>
+                                    <li><a href="pages-recoverpw.html">Recover Password</a></li>
+                                    <li><a href="pages-lock-screen.html">Lock Screen</a></li>
+                                    <li><a href="pages-blank.html">Blank Page</a></li>
+                                    <li><a href="pages-maintenance.html">Maintenance</a></li>
+                                    <li><a href="pages-coming-soon.html">Coming-soon</a></li>
+                                    <li><a href="pages-404.html">404 Error</a></li>
+                                    <li><a href="pages-404_alt.html">404 alt</a></li>
+                                    <li><a href="pages-500.html">500 Error</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul>
+                                    <li class="has_sub">
+                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                        <ul style="">
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left page-title">Role</h4>
+                                <ol class="breadcrumb pull-right">
+                                    <li><a href="#">Backend</a></li>
+                                    <li class="active">Role Management</li>
+                                </ol>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <!-- Row start -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <button type="button" class="btn btn-primary waves-effect waves-light"  data-toggle="modal" data-target="#panel-modal">Create Role</button>
+
+                                        <button type="button" id="search-button" class="btn btn-primary" data-toggle="collapse" data-target="#searchAccount">Search</button>
+                                        <button type="button" id="delete-button" class="btn btn-primary waves-effect waves-light" disabled>Delete</button>
+
+                                    </div>
+                                    <!-- Search Account Row start -->
+                                    <div class="row collapse" id="searchAccount">
+                                        <form role="form" class="form-horizontal">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-color panel-primary">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">Search Panel</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="col-md-6">
+                                                            <div class="panel panel-border panel-info">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">Account Info</h3>
+                                                                </div>
+                                                                <div class="panel-body">
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Role Name</label>
+                                                                        <div class="col-sm-6">
+                                                                            <input type="text" id="srole-name" name="srole-name" class="form-control" placeholder="input username">
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Create Date </label>
+                                                                        <div class="col-sm-4">
+                                                                            <input class="form-control" placeholder="mm/dd/yyyy" id="begin_datepicker"  name="createDate" type="text">
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-4 col-sm-offset-3">
+                                                                            <input class="form-control" placeholder="mm/dd/yyyy" id="end_datepicker" name="endDate" type="text">
+
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="panel panel-color panel-purple">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">Role</h3>
+                                                                </div>
+                                                                <div class="panel-body">
+                                                                    <div class="checkbox checkbox-inline">
+                                                                        <input type="checkbox" id="sinline-Checkbox1" value="option1">
+                                                                        <label> Inline One </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-success checkbox-inline">
+                                                                        <input type="checkbox" id="sinlineCheckbox2" value="option1" checked="checked">
+                                                                        <label> Inline Two </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-inline">
+                                                                        <input type="checkbox" id="sinlineCheckbox3" value="option1">
+                                                                        <label> Inline Three </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-inline">
+                                                                        <input type="checkbox" id="sinlineCheckbox4" value="option1">
+                                                                        <label> Inline Four </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-color panel-purple">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">User Status</h3>
+                                                                </div>
+                                                                <div class="panel-body">
+                                                                    <div class="checkbox checkbox-inline">
+                                                                        <input type="checkbox" id="sinlineCheckbox5" value="option1">
+                                                                        <label> Enable </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-offset-2 col-lg-8">
+                                                                <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+                                                                <button class="btn btn-default waves-effect" type="button">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <!-- End Search Account of Row -->
+
+                                    <!--  Account Row start -->
+                                    <!-- <div class="row collapse" id="createAccount">
+                                         <form id="createAccountForm" role="form" class="cmxform form-horizontal tasi-form" method="Post" action="#" novalidate="novalidate">
+                                             <div class="col-md-12">
+                                                 <div class="panel panel-color panel-primary">
+                                                     <div class="panel-heading">
+                                                         <h3 class="panel-title">Create Panel</h3>
+                                                     </div>
+                                                     <div class="panel-body">
+                                                         <div class="col-md-6">
+                                                             <div class="panel panel-border panel-info">
+                                                                 <div class="panel-heading">
+                                                                     <h3 class="panel-title">Account Info</h3>
+                                                                 </div>
+                                                                 <div class="panel-body">
+
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">UserName *</label>
+                                                                         <div class="col-sm-6">
+                                                                             <input type="text"  name="username" class="form-control" placeholder="input username">
+                                                                         </div>
+                                                                     </div>
+
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">LoginName *</label>
+                                                                         <div class="col-sm-6">
+                                                                             <input type="text"  name="loginname" class="form-control " placeholder="login name">
+                                                                         </div>
+                                                                     </div>
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">Password *</label>
+                                                                         <div class="col-sm-6">
+                                                                             <input class="form-control" id="password" name="password" type="password">                                                                        </div>
+                                                                     </div>
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">Confirm Password *</label>
+                                                                         <div class="col-sm-6">
+                                                                             <input class="form-control" id="confirm_password" name="confirm_password" type="password">                                                                        </div>
+                                                                     </div>
+
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">Email *</label>
+                                                                         <div class="col-sm-6">
+                                                                             <input type="text" id="email" name="email" class="form-control" placeholder="email">
+                                                                         </div>
+                                                                     </div>
+
+                                                                     <div class="form-group">
+                                                                         <label class="col-sm-3 control-label">Location</label>
+                                                                         <div class="col-sm-4">
+                                                                             <input type="text" name="location" class="form-control" placeholder=".col-sm-4">
+                                                                         </div>
+                                                                     </div>
+
+
+
+                                                                 </div>
+                                                             </div>
+
+                                                         </div>
+
+                                                         <div class="col-md-6">
+
+                                                             <div class="panel panel-color panel-purple">
+                                                                 <div class="panel-heading">
+                                                                     <h3 class="panel-title">Role</h3>
+                                                                 </div>
+                                                                 <div class="panel-body">
+                                                                     <div class="checkbox checkbox-inline">
+                                                                         <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                                                         <label for="inlineCheckbox1"> Inline One </label>
+                                                                     </div>
+                                                                     <div class="checkbox checkbox-success checkbox-inline">
+                                                                         <input type="checkbox" id="inlineCheckbox2" value="option1" checked="checked">
+                                                                         <label for="inlineCheckbox2"> Inline Two </label>
+                                                                     </div>
+                                                                     <div class="checkbox checkbox-inline">
+                                                                         <input type="checkbox" id="inlineCheckbox3" value="option1">
+                                                                         <label for="inlineCheckbox3"> Inline Three </label>
+                                                                     </div>
+                                                                     <div class="checkbox checkbox-inline">
+                                                                         <input type="checkbox" id="inlineCheckbox4" value="option1">
+                                                                         <label for="inlineCheckbox4"> Inline Four </label>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="panel panel-color panel-purple">
+                                                                 <div class="panel-heading">
+                                                                     <h3 class="panel-title">User Status</h3>
+                                                                 </div>
+                                                                 <div class="panel-body">
+                                                                     <div class="checkbox checkbox-inline">
+                                                                         <input type="checkbox" id="enable" name="enable" checked>
+                                                                         <label for="inlineCheckbox4"> Enable </label>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                             <div class="col-lg-offset-2 col-lg-8">
+                                                                 <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+                                                                 <button class="btn btn-default waves-effect" type="button">Cancel</button>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </form>
+
+                                     </div>--->
+                                    <!-- End  Account of Row -->
+
+
+
+
+
+
+                                    <!--End Custom Modals---->
+                                    <div class="panel-body">
+
+
+                                        <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Role name</th>
+                                                <th>Role description</th>
+
+                                                <th>Create date</th>
+                                                <th>Update date</th>
+
+                                                <th>actions</th>
+                                            </tr>
+                                            </thead>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End of Row -->
+
+
+
+
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2016 © Panshi.
+                </footer>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+            <!-- Custom Modals -->
+
+            <div id="panel-modal"  class="modal fade" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;overflow: hidden;">
+                <div class="modal-dialog">
+                    <div class="modal-content p-0 b-0">
+                        <div class="panel panel-color panel-primary">
+                            <div class="panel-heading">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 class="panel-title">Create Role</h3>
+                            </div>
+                            <div class="panel-body" style="margin-top: 0px;">
+                                <form id="createRoleForm" role="form" class="cmxform form-horizontal tasi-form" method="Post" action="#" novalidate="novalidate">
+                                    <div class="col-md-6">
+                                        <div class="panel panel-border panel-info">
+                                            <!--<div class="panel-heading">
+                                                <h3 class="panel-title">Account Info</h3>
+                                            </div>
+                                            -->
+                                            <div class="panel-body">
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Role Name *</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text"  id="un" name="rolename" class="form-control" placeholder="input Role Name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="roledesc" class="control-label col-lg-3">Your Description</label>
+                                                    <div class="col-lg-8">
+                                                        <textarea class="form-control" id="roledesc" name="roledesc" required="" rows="9"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Enable</label>
+                                                    <div class="col-sm-8">
+
+                                                        <div class="col-lg-10 col-sm-6">
+                                                            <input style="width: 16px" id="status" name="status" type="checkbox" checked>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="panel panel-color panel-purple">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Role</h3>
+
+
+
+                                            </div>
+                                            <div class="panel-body" style="margin-top: 0px;">
+                                                <div class="col-sm-12">
+
+                                                    <div id="treeview-checkable" class="" style="margin: 0px;OVERFLOW-Y: scroll; OVERFLOW-X:hidden; width: 385px; height: 275px"></div>
+                                                </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-8">
+                                            <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+                                            <button class="btn btn-default waves-effect" type="button" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <!-- Right Sidebar -->
+            <div class="side-bar right-bar nicescroll">
+                <h4 class="text-center">Chat</h4>
+                <div class="contact-list nicescroll">
+                    <ul class="list-group contacts-list">
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="">
+                                </div>
+                                <span class="name">Chadengle</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <span class="name">Tomaslau</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-3.jpg" alt="">
+                                </div>
+                                <span class="name">Stillnotdavid</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-4.jpg" alt="">
+                                </div>
+                                <span class="name">Kurafire</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-5.jpg" alt="">
+                                </div>
+                                <span class="name">Shahedk</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-6.jpg" alt="">
+                                </div>
+                                <span class="name">Adhamdannaway</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-7.jpg" alt="">
+                                </div>
+                                <span class="name">Ok</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-8.jpg" alt="">
+                                </div>
+                                <span class="name">Arashasghari</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-9.jpg" alt="">
+                                </div>
+                                <span class="name">Joshaustin</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-10.jpg" alt="">
+                                </div>
+                                <span class="name">Sortino</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                    </ul>  
+                </div>
+            </div>
+            <!-- /Right-bar -->
+
+
+        </div>
+        <!-- END wrapper -->
+    
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- CUSTOM JS -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <!-- Datatables-->
+        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+        <script src="assets/plugins/datatables/jszip.min.js"></script>
+        <script src="assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.print.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="assets/pages/datatables.role.init.js"></script>
+        <!--form validation-->
+        <script type="text/javascript" src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+
+        <!--form validation init-->
+        <script src="assets/pages/form-validation-role-init.js"></script>
+        <script type="text/javascript" src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+
+        <!-- Modal-Effect -->
+        <script src="assets/plugins/modal-effect/js/classie.js"></script>
+        <script src="assets/plugins/modal-effect/js/modalEffects.js"></script>
+
+
+        <!-- Sweet-Alert  -->
+        <script src="assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="assets/pages/jquery.sweet-alert.init.js"></script>
+
+        <script src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
+        <!--script for this resource treeview page only-->
+        <script src="assets/plugins/nestable/jquery.nestable.js"></script>
+        <script src="assets/pages/nestable.js"></script>
+        <script src="assets/js/bootstrap-treeview.js"></script>
+        <script type="text/javascript">
+
+            /* Formatting function for row details - modify as you need */
+            function format ( d ) {
+                // `d` is the original data object for the row
+                return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+                        '<tr>'+
+                        '<td>Full name:</td>'+
+                        '<td>panjingping</td>'+
+                        '</tr>'+
+                        '<tr>'+
+                        '<td>Extension number:</td>'+
+                        '<td>'+d.extn+'</td>'+
+                        '</tr>'+
+                        '<tr>'+
+                        '<td>Extra info:</td>'+
+                        '<td>And any further details here (images etc)...</td>'+
+                        '</tr>'+
+                        '</table>';
+            }
+            $(document).ready(function() {
+
+
+
+                var pressed = false;
+                var start = undefined;
+                var startX, startWidth;
+
+                $("#datatable-responsive th").mousedown(function(e) {
+                    start = $(this);
+                    pressed = true;
+                    startX = e.pageX;
+                    startWidth = $(this).width();
+                    $(start).addClass("resizing");
+                });
+
+                $(document).mousemove(function(e) {
+                    if(pressed) {
+                        $(start).width(startWidth+(e.pageX-startX));
+                    }
+                });
+
+                $(document).mouseup(function() {
+                    if(pressed) {
+                        $(start).removeClass("resizing");
+                        pressed = false;
+                    }
+                });
+
+
+                $('#panel-modal').on('shown.bs.modal', function(e) {
+                    /*
+                     alert("this is demo");
+
+                     var url = "remote.html"
+                     alert(url);
+                     $.get(url, function(data) {
+                     $(e.target).find('.panel-body').html(data);
+
+                     });
+                     */
+                    $('#un').focus();
+
+
+
+                });
+                $("#panel-modal").draggable({ handle: ".panel-heading" });
+
+
+                $('#begin_datepicker').datepicker();
+                $('#end_datepicker').datepicker();
+               // TableManageButtons.init();
+
+
+
+
+                /*init role treeview */
+
+                var json = '[' +
+                        '{' +
+                        '"text": "Parent 1",' +
+                        '"nodes": [' +
+                        '{' +
+                        '"text": "Child 1",' +
+                        '"nodes": [' +
+                        '{' +
+                        '"text": "Grandchild 1"' +
+                        '},' +
+                        '{' +
+                        '"text": "Grandchild 2"' +
+                        '}' +
+                        ']' +
+                        '},' +
+                        '{' +
+                        '"text": "Child 2"' +
+                        '}' +
+                        ']' +
+                        '},' +
+                        '{' +
+                        '"text": "Parent 2"' +
+                        '},' +
+                        '{' +
+                        '"text": "Parent 3"' +
+                        '},' +
+                        '{' +
+                        '"text": "Parent 4"' +
+                        '},' +
+                        '{' +
+                        '"text": "Parent 5"' +
+                        '}' +
+                        ']';
+
+
+
+
+
+                var $checkableTree = $('#treeview-checkable').treeview({
+                    data: json,
+                    showIcon: false,
+                    showCheckbox: true,
+                    onNodeChecked: function(event, node) {
+                        // $('#checkable-output').prepend('<p>' + node.text + ' was checked</p>');
+                        alert(node.text + ' was checked</p>');
+                    },
+                    onNodeUnchecked: function (event, node) {
+                        // $('#checkable-output').prepend('<p>' + node.text + ' was unchecked</p>');
+                        alert(node.text + ' was unchecked</p>');
+                    }
+                });
+
+                var findCheckableNodess = function() {
+                    return $checkableTree.treeview('search', [ $('#input-check-node').val(), { ignoreCase: false, exactMatch: false } ]);
+                };
+                var checkableNodes = findCheckableNodess();
+
+                // Check/uncheck/toggle nodes
+                $('#input-check-node').on('keyup', function (e) {
+                    checkableNodes = findCheckableNodess();
+                    $('.check-node').prop('disabled', !(checkableNodes.length >= 1));
+                });
+
+                $('#btn-check-node.check-node').on('click', function (e) {
+                    $checkableTree.treeview('checkNode', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+                });
+
+                $('#btn-uncheck-node.check-node').on('click', function (e) {
+                    $checkableTree.treeview('uncheckNode', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+                });
+
+                $('#btn-toggle-checked.check-node').on('click', function (e) {
+                    $checkableTree.treeview('toggleNodeChecked', [ checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+                });
+
+                // Check/uncheck all
+                $('#btn-check-all').on('click', function (e) {
+                    $checkableTree.treeview('checkAll', { silent: $('#chk-check-silent').is(':checked') });
+                });
+
+                $('#btn-uncheck-all').on('click', function (e) {
+                    $checkableTree.treeview('uncheckAll', { silent: $('#chk-check-silent').is(':checked') });
+                });
+
+
+                /*end init role treeview*/
+
+                $('#datatable-responsive').DataTable( {
+                    dom: "Bfrtip",
+                    buttons: [{
+                        text: 'Create',
+                        id:   'createAccountButton',
+                        className: "btn btn-primary",
+
+
+                        action: function ( e, dt, node, config ) {
+
+                            alert("call ajax");
+                            $.get("create.html", function(data) {
+                                $("#pageContentBody").html(data);
+
+
+                            });
+                        }
+                    }, {
+                        extend: "copy",
+                        className: "btn btn-primary"
+                    },{
+                        extend: "csv",
+                        className: "btn btn-primary"
+                    }, {
+                        extend: "excel",
+                        className: "btn btn-primary"
+                    }, {
+                        extend: "pdf",
+                        className: "btn btn-primary"
+                    }, {
+                        extend: "print",
+                        className: "btn btn-primary"
+
+                    }],
+                    //"processing": true,
+                    //"serverSide": true,
+                    "ajax": "role.json",
+                    "columns": [
+                        { "className":'details-control',"data":null,"defaultContent": '<i class="md md-add">',"bSortable": false},
+                        { "data": "role_name" },
+                        { "data": "role_desc" },
+                        { "data": "create_date" },
+                        { "data": "update_date" },
+                        { "className":'action',"data":null,"defaultContent": '<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a><a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a><a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>',"bSortable": false}
+
+                    ],
+                    "paging": true,
+                    "info":false,
+                    stateSave: true,
+                    responsive: !0
+                });
+
+
+                var table = $('#datatable-responsive').DataTable();
+
+                console.log(table);
+
+
+                $("#search-button").click(function(){
+
+                    if($("#createAccount").hasClass('collapse in')){
+
+                        $("#createAccount").removeClass('collapse in').addClass('collapse');
+
+                    }
+
+                    if (!$("#searchAccount").hasClass('collapse in')){
+
+                        $(this).html("Close Search")
+                        $("#create-button").html("Create");
+
+                    }else
+                        $(this).html("Search")
+
+
+
+
+
+                });
+                $("#create-button").click(function(){
+
+                    if($("#searchAccount").hasClass('collapse in')){
+
+                        $("#searchAccount").removeClass('collapse in').addClass('collapse');
+
+
+                    }
+
+                    if (!$("#createAccount").hasClass('collapse in')){
+
+                        $(this).html("Close Create")
+                        $("#search-button").html("Search");
+
+                    }else
+                        $(this).html("Create")
+
+
+
+
+
+                });
+
+
+                $('#datatable-responsive tbody').on( 'click', 'tr', function () {
+
+
+                    console.log($(this).children());
+
+                    $(this).toggleClass('selected');
+
+
+
+                    $(this).children().each(function(){
+
+                        // $(this).not(".actions").toggleClass('selected');
+                        $(this).not(".actions").toggleClass('selected');
+
+                    });
+
+                    if (table.rows('.selected').data().length>0){
+
+                        $("#delete-button").removeAttr("disabled");
+                    }else
+                    {
+                        $("#delete-button").attr('disabled',"true");
+                    }
+
+
+
+
+
+
+                });
+
+
+
+                $('#delete-button').click( function () {
+                    console.log(table.rows('.selected'));
+                    alert( table.rows('.selected').data().length +' row(s) selected' );
+                } );
+
+                $('#datatable-responsive tbody').on('click', 'td.details-control', function ()  {
+
+                    var tr = $(this).closest('tr');
+                    var row = table.row( tr );
+
+                    if ( row.child.isShown() ) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        // Open this row
+                        row.child( format(row.data()) ).show();
+                        tr.addClass('shown');
+                    }
+                });
+
+                $("#deleteAccount").click(function () {
+
+                    alert("delete");
+
+                });
+
+
+                var dropDownList='<div class="btn-group">'+
+                        '                                            <button type="button"  class="btn btn-primary dropdown-toggle waves-effect waves-light " data-toggle="dropdown" aria-expanded="false">Display Field <span class="caret"></span></button>'+
+                        '                                            <ul class="dropdown-menu" role="menu">'+
+                        '                                                <li>'+
+                        '												  <div class="checkbox checkbox-primary" style="padding-left:25px;">'+
+                        '                                            <input id="checkbox0" type="checkbox" class="toggle-vis" data-column="1" checked="checked" >'+
+                        '                                            <label for="checkbox0">'+
+                        '                                                &nbsp;&nbsp;First name'+
+                        '                                            </label>'+
+                        '                                        </div>'+
+                        '												</li>'+
+                        '                                                <li>'+
+                        '												 <div class="checkbox checkbox-primary" style="padding-left:25px;">'+
+                        '                                            <input id="checkbox1" type="checkbox" class="toggle-vis" data-column="2" checked="checked" >'+
+                        '                                            <label for="checkbox1">'+
+                        '                                                &nbsp;&nbsp;Last name'+
+                        '                                            </label>'+
+                        '                                        </div>'+
+                        '												</li>'+
+                        '                                                <li>'+
+                        '												 <div class="checkbox checkbox-primary" style="padding-left:25px;">'+
+                        '                                            <input id="checkbox2" type="checkbox" class="toggle-vis" data-column="3" checked="checked" >'+
+                        '                                            <label for="checkbox2">'+
+                        '                                                &nbsp;&nbsp;Position'+
+                        '                                            </label>'+
+                        '                                        </div>'+
+                        '												</li>'+
+                        '                                                <li>'+
+                        '												 <div class="checkbox checkbox-primary" style="padding-left:25px;">'+
+                        '                                            <input id="checkbox3" type="checkbox" class="toggle-vis" data-column="4" checked="checked" >'+
+                        '                                            <label for="checkbox3">'+
+                        '                                                &nbsp;&nbsp;Office'+
+                        '                                            </label>'+
+                        '                                        </div>'+
+                        '												</li>'+
+                        '                                                <li><div class="checkbox checkbox-primary" style="padding-left:25px;">'+
+                        '                                            <input id="checkbox4" type="checkbox" class="toggle-vis" data-column="5" checked="checked" >'+
+                        '                                            <label for="checkbox4">'+
+                        '                                                &nbsp;&nbsp;Age'+
+                        '                                            </label>'+
+                        '                                        </div></li>'+
+                        '                                            </ul>'+
+                        '                                        </div>';
+
+                info='<label class="pull-left">Show <select name="datatable_length" aria-controls="datatable" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>';
+                $("#datatable-responsive_wrapper div:first-child").append(dropDownList);
+                $("#datatable-responsive_filter label:first-child").before(info+"<label class='pull-left' style='margin-left: 5px;'>Total 32</label>");
+
+
+
+
+                $('.toggle-vis').on( 'click', function (e) {
+
+                    // e.preventDefault();
+
+                    // Get the column API object
+
+                    console.log($(this));
+                    var column = table.column($(this).attr('data-column'));
+
+
+                    if($(this).attr("checked"))
+                    {
+                        $(this).removeAttr("checked");
+                    }
+                    else
+                    {
+                        $(this).attr("checked",'true');
+
+                    }
+
+                    // Toggle the visibility
+                    column.visible(!column.visible());
+                });
+            });
+
+
+
+        </script>
+
+
+
+
+    </body>
+</html>
